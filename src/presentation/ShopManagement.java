@@ -31,6 +31,7 @@ public class ShopManagement {
                     break;
                 case 3:
                     System.out.println("Thoát chương trình!");
+                    System.exit(0);
                     return;
                 default:
                     System.out.println("Chọn sai, vui lòng nhập lại!");
