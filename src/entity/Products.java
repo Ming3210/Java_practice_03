@@ -54,7 +54,7 @@ public class Products implements IApp {
         while (true) {
             System.out.print("Nhập mã sản phẩm (5 ký tự, bắt đầu bằng C, E, T): ");
             productId = scanner.nextLine().trim();
-            if (!productId.matches("[CET][A-Za-z0-9]{4}") || isDuplicateProduct(existingProducts, productId, "")) {
+            if (!productId.matches("[CET][A-Za-z0-9]{4}") || isDuplicateProduct(existingProducts, productId, "",productId)) {
                 System.out.println("Mã sản phẩm không hợp lệ hoặc đã tồn tại, vui lòng nhập lại!");
             } else {
                 break;
@@ -64,7 +64,7 @@ public class Products implements IApp {
         while (true) {
             System.out.print("Nhập tên sản phẩm (10-100 ký tự, không trùng): ");
             productName = scanner.nextLine().trim();
-            if (productName.length() < 10 || productName.length() > 100 || isDuplicateProduct(existingProducts, "", productName)) {
+            if (productName.length() < 10 || productName.length() > 100 || isDuplicateProduct(existingProducts, "", productName,productId)) {
                 System.out.println("Tên sản phẩm không hợp lệ hoặc đã tồn tại, vui lòng nhập lại!");
             } else {
                 break;
